@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "modelex.io",
+    "section": "",
+    "text": "Welcome to Modelex.io, a community-driven repository designed to empower innovators in statistical modeling, machine learning, deep learning, and natural language processing. Our collective aim is to advance the field of AI and data science by sharing high-quality datasets and fostering collaborative efforts.gh repo clone adminmodelex/modelex\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About us",
+    "section": "",
+    "text": "Welcome to Modelex.io, a community-driven repository designed to empower innovators in statistical modeling, machine learning, deep learning, and natural language processing. Our collective aim is to advance the field of AI and data science by sharing high-quality datasets and fostering collaborative efforts.\n\nWhat We Share\n\nStatistical Modeling Datasets:\nOur members contribute and share a diverse range of data for various statistical methods including regression, classification, and clustering.\n\n\nMachine Learning & Deep Learning:\nFind datasets curated and enriched by our community, tailored for machine learning algorithms, neural networks, and more.\n\n\nNatural Language Processing:\nBrowse text-based datasets from community members working on sentiment analysis, machine translation, and other NLP projects.\n\n\n\nWhy Be a Part of Us\n\nQuality:\nCommunity submissions go through rigorous peer reviews to ensure datasets meet our quality standards.\n\n\nDiversity:\nOur repository is a melting pot of data from various domains, contributed by members from around the world.\n\n\nEase of Use:\nThe platform is community-designed to be user-friendly, making dataset discovery and sharing a breeze.\n\n\nCollaboration:\nOpen forums, regular webinars, and project collaboration rooms make it easy to connect with like-minded individuals.\n\n\nSecurity:\nWe prioritize the security and confidentiality of all shared resources.\n\n\n\nGet Involved\nJoin our ever-growing community and contribute to the field of AI and data science. Whether you’re here to share a dataset, collaborate on research, or simply learn from the wealth of resources, you’re welcome at Modelex.io.\nThank you for being a part of Modelex.io! Together, we’re shaping the future of AI and data science."
+  },
+  {
+    "objectID": "about.html#what-we-share",
+    "href": "about.html#what-we-share",
+    "title": "",
+    "section": "What We Share",
+    "text": "What We Share\n\nStatistical Modeling Datasets:\nOur members contribute and share a diverse range of data for various statistical methods including regression, classification, and clustering.\n\n\nMachine Learning & Deep Learning:\nFind datasets curated and enriched by our community, tailored for machine learning algorithms, neural networks, and more.\n\n\nNatural Language Processing:\nBrowse text-based datasets from community members working on sentiment analysis, machine translation, and other NLP projects."
+  },
+  {
+    "objectID": "about.html#why-be-a-part-of-us",
+    "href": "about.html#why-be-a-part-of-us",
+    "title": "",
+    "section": "Why Be a Part of Us",
+    "text": "Why Be a Part of Us\n\nQuality:\nCommunity submissions go through rigorous peer reviews to ensure datasets meet our quality standards.\n\n\nDiversity:\nOur repository is a melting pot of data from various domains, contributed by members from around the world.\n\n\nEase of Use:\nThe platform is community-designed to be user-friendly, making dataset discovery and sharing a breeze.\n\n\nCollaboration:\nOpen forums, regular webinars, and project collaboration rooms make it easy to connect with like-minded individuals.\n\n\nSecurity:\nWe prioritize the security and confidentiality of all shared resources."
+  },
+  {
+    "objectID": "about.html#get-involved",
+    "href": "about.html#get-involved",
+    "title": "",
+    "section": "Get Involved",
+    "text": "Get Involved\nJoin our ever-growing community and contribute to the field of AI and data science. Whether you’re here to share a dataset, collaborate on research, or simply learn from the wealth of resources, you’re welcome at Modelex.io.\nThank you for being a part of Modelex.io! Together, we’re shaping the future of AI and data science."
+  }
+]
