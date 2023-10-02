@@ -1,0 +1,530 @@
+project:
+  type: website
+  output-dir: _output
+  preview:
+    port: 8000
+  post-render:
+    - ../gen_redirects.py
+
+highlight-style: ayu
+code-annotations: hover
+
+execute:
+  warning: false
+  error: false
+
+filters:
+  - interlinks
+
+interlinks:
+  fast: true
+  sources:
+    python:
+      url: https://docs.python.org/3/
+    sqlalchemy:
+      url: https://docs.sqlalchemy.org/
+    arrow:
+      url: https://arrow.apache.org/docs/
+    pandas:
+      url: http://pandas.pydata.org/pandas-docs/stable/
+
+website:
+  title: "Ibis"
+  site-url: https://ibis-project.org
+  description: "the portable Python dataframe library"
+  favicon: logo.svg
+
+  # search
+  search:
+    location: navbar
+    type: overlay
+
+  # options
+  reader-mode: false
+  twitter-card: true
+  back-to-top-navigation: true
+  repo-url: https://github.com/ibis-project/ibis
+  repo-actions: [edit, issue]
+  repo-branch: master
+  repo-subdir: docs
+  issue-url: https://github.com/ibis-project/ibis/issues/new/choose
+
+  # footer
+  page-footer:
+    border: false
+    left: ""
+    right:
+      - icon: github
+        href: https://github.com/ibis-project
+      - icon: zulip
+        href: https://ibis-project.zulipchat.com
+      - icon: rss
+        href: https://ibis-project.org/posts.xml
+
+  # nav
+  navbar:
+    logo: logo.svg
+    tools:
+      - icon: github
+        menu:
+          - text: Source code
+            url: https://github.com/ibis-project/ibis
+          - text: Report a bug
+            url: https://github.com/ibis-project/ibis/issues/new?assignees=&labels=bug&projects=&template=bug-report.yml&title=bug
+          - text: Report a documentation issue
+            url: https://github.com/ibis-project/ibis/issues/new?assignees=&labels=docs&projects=&template=docs-issue.yml&title=docs
+          - text: Submit a feature request
+            url: https://github.com/ibis-project/ibis/issues/new?assignees=&labels=feature&projects=&template=feature-request.yml&title=feat
+          - text: Ask the community for help
+            url: https://github.com/ibis-project/ibis/discussions/new?category=q-a
+    left:
+      - sidebar:getting-started
+      - sidebar:concepts
+      - sidebar:backends
+      - sidebar:how-to
+      - sidebar:reference
+    right:
+      - posts.qmd
+      - release_notes.md
+      - sidebar:contribute
+
+  sidebar:
+    - id: ""
+    - id: getting-started
+      title: "Getting started"
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - install.qmd
+        - auto: tutorials/*.qmd
+        - auto: tutorials/data-platforms
+    - id: concepts
+      title: "Concepts"
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - why.qmd
+        - auto: concepts/*.qmd
+    - id: backends
+      title: "Backends"
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - auto: backends/*.qmd
+        - support_matrix.qmd
+    - id: how-to
+      title: "How-to"
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - auto: "how-to/configure"
+        - auto: "how-to/input-output"
+        - auto: "how-to/analytics"
+        - auto: "how-to/visualization"
+        - auto: "how-to/extending"
+    - id: contribute
+      title: "Contribute"
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - auto: contribute
+    - id: presentations
+      title: "Presentations"
+      style: "docked"
+      collapse-level: 2
+      contents: presentations
+    - id: reference
+      title: "Reference"
+      style: "docked"
+      collapse-level: 2
+      contents:
+        - section: Expression API
+          contents:
+            - reference/expression-tables.qmd
+            - reference/selectors.qmd
+            - reference/expression-generic.qmd
+            - reference/expression-numeric.qmd
+            - reference/expression-strings.qmd
+            - reference/expression-temporal.qmd
+            - reference/expression-collections.qmd
+            - reference/expression-geospatial.qmd
+
+        - section: Type system
+          contents:
+            - reference/datatypes.qmd
+            - reference/schemas.qmd
+
+        - section: UDFs
+          contents:
+            - reference/scalar-udfs.qmd
+
+        - section: Connection APIs
+          contents:
+            - reference/connection.qmd
+
+        - section: Configuration
+          contents:
+            - reference/ContextAdjustment.qmd
+            - reference/Interactive.qmd
+            - reference/Options.qmd
+            - reference/Repr.qmd
+            - reference/SQL.qmd
+
+format:
+  html:
+    theme:
+      light: [flatly, theme-light.scss]
+      dark: [darkly, theme-dark.scss]
+    toc: true
+    css: styles.css
+
+quartodoc:
+  package: ibis
+  title: Reference
+  sidebar: reference/_sidebar.yml
+  render_interlinks: true
+  renderer: _renderer.py
+  options:
+    signature_name: short
+  sections:
+    - title: Expression API
+      desc: "APIs for manipulating table, column and scalar expressions"
+      contents:
+        - kind: page
+          path: expression-tables
+          summary:
+            name: Table expressions
+            desc: Tables are one of the core data structures in Ibis.
+          contents:
+            - name: Table
+              package: ibis.expr.types.relations
+            - name: GroupedTable
+              package: ibis.expr.types.groupby
+            - name: read_csv
+              dynamic: true
+              signature_name: full
+            - name: read_delta
+              dynamic: true
+              signature_name: full
+            - name: read_json
+              dynamic: true
+              signature_name: full
+            - name: read_parquet
+              dynamic: true
+              signature_name: full
+            - name: memtable
+              dynamic: true
+              signature_name: full
+            - name: table
+              dynamic: true
+              signature_name: full
+            - name: difference
+              dynamic: true
+              signature_name: full
+            - name: intersect
+              dynamic: true
+              signature_name: full
+            - name: union
+              dynamic: true
+              signature_name: full
+            - name: row_number
+              dynamic: true
+              signature_name: full
+            - name: window
+              dynamic: true
+              signature_name: full
+            - name: cumulative_window
+              dynamic: true
+              signature_name: full
+            - name: range_window
+              dynamic: true
+              signature_name: full
+            - name: trailing_range_window
+              dynamic: true
+              signature_name: full
+            - name: trailing_window
+              dynamic: true
+              signature_name: full
+
+        - kind: page
+          path: expression-generic
+          summary:
+            name: Generic expressions
+            desc: Scalars and columns of any element type.
+          contents:
+            - name: Value
+              package: ibis.expr.types.generic
+            - name: Column
+              package: ibis.expr.types.generic
+            - name: Scalar
+              package: ibis.expr.types.generic
+            - name: literal
+              dynamic: true
+              signature_name: full
+            - name: param
+              dynamic: true
+              signature_name: full
+            - name: NA
+              # Ideally exposed under `ibis` but that doesn't seem to work??
+              package: ibis.expr.api
+              signature_name: full
+            - name: "null"
+              dynamic: true
+              signature_name: full
+            - name: coalesce
+              dynamic: true
+              signature_name: full
+            - name: least
+              dynamic: true
+              signature_name: full
+            - name: greatest
+              dynamic: true
+              signature_name: full
+            - name: asc
+              dynamic: true
+              signature_name: full
+            - name: desc
+              dynamic: true
+              signature_name: full
+            - name: ifelse
+              dynamic: true
+              signature_name: full
+            - name: case
+              dynamic: true
+              signature_name: full
+            - name: show_sql
+              dynamic: true
+              signature_name: full
+            - name: to_sql
+              dynamic: true
+              signature_name: full
+
+        - kind: page
+          path: expression-numeric
+          summary:
+            name: Numeric and Boolean expressions
+            desc: Integer, floating point, decimal, and boolean expressions.
+          contents:
+            - name: NumericValue
+              package: ibis.expr.types.numeric
+            - name: NumericColumn
+              package: ibis.expr.types.numeric
+            - name: IntegerValue
+              package: ibis.expr.types.numeric
+            - name: IntegerColumn
+              package: ibis.expr.types.numeric
+            - name: FloatingValue
+              package: ibis.expr.types.numeric
+            - name: DecimalValue
+              package: ibis.expr.types.numeric
+            - name: BooleanValue
+              package: ibis.expr.types.logical
+            - name: and_
+              dynamic: true
+              signature_name: full
+            - name: or_
+              dynamic: true
+              signature_name: full
+            - name: random
+              dynamic: true
+              signature_name: full
+
+        - kind: page
+          path: expression-strings
+          package: ibis.expr.types.strings
+          summary:
+            name: String expressions
+            desc: All string operations are valid for both scalars and columns.
+          contents:
+            - StringValue
+
+        - kind: page
+          path: expression-temporal
+          package: ibis.expr.types.temporal
+          summary:
+            name: Temporal expressions
+            desc: Dates, times, timestamps and intervals.
+          contents:
+            - TimestampValue
+            - DateValue
+            - TimeValue
+            - IntervalValue
+            - DayOfWeek
+            - name: now
+              package: ibis
+              dynamic: true
+              signature_name: full
+            - name: date
+              package: ibis
+              dynamic: true
+              signature_name: full
+            - name: time
+              package: ibis
+              dynamic: true
+              signature_name: full
+            - name: timestamp
+              package: ibis
+              dynamic: true
+              signature_name: full
+            - name: interval
+              package: ibis
+              dynamic: true
+              signature_name: full
+
+        - kind: page
+          path: expression-collections
+          package: ibis
+          summary:
+            name: Collection expressions
+            desc: Arrays, maps and structs.
+          contents:
+            - name: ArrayValue
+              package: ibis.expr.types.arrays
+            - name: MapValue
+              package: ibis.expr.types.maps
+            - name: StructValue
+              package: ibis.expr.types.structs
+            - name: array
+              dynamic: true
+              signature_name: full
+            - name: map
+              dynamic: true
+              signature_name: full
+            - name: struct
+              dynamic: true
+              signature_name: full
+
+        - kind: page
+          path: expression-geospatial
+          package: ibis.expr.types.geospatial
+          summary:
+            name: Geospatial expressions
+            desc: Points, Polygons, LineStrings, and other geospatial types.
+          contents:
+            - GeoSpatialValue
+            - GeoSpatialColumn
+
+        - kind: page
+          summary:
+            name: Column selectors
+            desc: Choose Table columns based on dtype, regex, and other criteria
+          path: selectors
+          package: ibis.selectors
+          contents:
+            - where
+            - numeric
+            - of_type
+            - startswith
+            - endswith
+            - contains
+            - matches
+            - any_of
+            - all_of
+            - c
+            - across
+            - if_any
+            - if_all
+            - r
+            - first
+            - last
+            - all
+
+    - title: Type System
+      desc: "Data types and schemas"
+      contents:
+        - kind: page
+          path: datatypes
+          package: ibis.expr.datatypes.core
+          summary:
+            name: Data types
+            desc: Scalar and column data types
+          contents:
+            - name: dtype
+              package: ibis
+              dynamic: true
+              signature_name: full
+            - Array
+            - Binary
+            - Boolean
+            - DataType
+            - Date
+            - Decimal
+            - Float16
+            - Float32
+            - Float64
+            - INET
+            - Int16
+            - Int32
+            - Int64
+            - Int8
+            - Interval
+            - JSON
+            - LineString
+            - MACADDR
+            - Map
+            - MultiLineString
+            - MultiPoint
+            - MultiPolygon
+            - "Null"
+            - Point
+            - Polygon
+            - String
+            - Struct
+            - Time
+            - Timestamp
+            - UInt16
+            - UInt32
+            - UInt64
+            - UInt8
+            - UUID
+        - kind: page
+          path: schemas
+          summary:
+            name: Schemas
+            desc: Table Schemas
+          contents:
+            - name: schema
+              dynamic: true
+              signature_name: full
+            - name: Schema
+              package: ibis.expr.schema
+
+    - title: Connection APIs
+      contents:
+        - kind: page
+          path: connection
+          summary:
+            name: Top-level connection APIs
+            desc: Create and manage backend connections.
+          contents:
+            - name: connect
+              dynamic: true
+              signature_name: full
+            - name: get_backend
+              dynamic: true
+              signature_name: full
+            - name: set_backend
+              dynamic: true
+              signature_name: full
+
+    - title: UDFs
+      desc: "User-defined function APIs"
+      package: ibis.expr.operations.udf
+      contents:
+        - kind: page
+          path: scalar-udfs
+          summary:
+            name: Scalar UDFs
+            desc: "Scalar user-defined function APIs"
+          contents:
+            - scalar
+
+    - title: Configuration
+      desc: "Ibis configuration"
+      package: ibis.config
+      contents:
+        - ContextAdjustment
+        - Interactive
+        - Options
+        - Repr
+        - SQL
